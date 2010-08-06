@@ -1,16 +1,12 @@
 package com.benjaminrdoerr.android.kanjiclock;
 
 import android.app.Activity;
-import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.text.format.DateFormat;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Locale;
 
 public class KanjiClockActivity extends Activity {
 
