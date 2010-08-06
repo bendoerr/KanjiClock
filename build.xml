@@ -406,7 +406,6 @@
     </target>
 
     <!-- Targets for code-coverage measurement purposes, invoked from external file -->
-
     <!-- Emma-instruments tested project classes (compiles the tested project if necessary)
              and writes instrumented classes to ${instrumentation.absolute.dir}/classes -->
     <target name="-emma-instrument" depends="compile">
@@ -417,6 +416,7 @@
                    mode="overwrite"
                    instrpath="${out.absolute.dir}/classes"
                    outdir="${out.absolute.dir}/classes">
+                <filter excludes="com.benjaminrdoerr.android.kanjiclock.R*" />
             </instr>
             <!-- TODO: exclusion filters on R*.class and allowing custom exclusion from
                  user defined file -->
