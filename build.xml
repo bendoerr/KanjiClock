@@ -501,7 +501,7 @@
                 <path refid="android.target.classpath"/>
             </classpath>
 
-            <formatter type="plain"/>
+            <formatter type="xml"/>
 
             <batchtest todir="${reports.dir}">
                 <fileset dir="${source.test.absolute.dir}" includes="**/**Tests.java"/>
