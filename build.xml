@@ -528,6 +528,7 @@
                 </infileset>
                 <!-- TODO: reports in other, indicated by user formats -->
                 <html outfile="${reports.dir}/coverage.html" />
+                <xml outfile="${reports.dir}/coverage.xml" />
             </report>
         </emma>
         <echo>Cleaning up temporary files...</echo>
