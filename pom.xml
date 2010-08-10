@@ -21,6 +21,7 @@
 
       <build>
           <sourceDirectory>src</sourceDirectory>
+		  <testSourceDirectory>test</testSourceDirectory>
           <plugins>
               <plugin>
                   <groupId>
