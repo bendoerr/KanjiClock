@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.benjaminrdoerr.android.kanjiclock">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.fairviewfamilyfarm.kanjiclock">
     <application android:icon="@drawable/icon" android:label="KanjiClock">
         <activity android:name=".KanjiClockActivity">
             <intent-filter>

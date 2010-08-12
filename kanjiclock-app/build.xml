@@ -96,9 +96,9 @@
     <property name="source.dir" value="src"/>
     <property name="source.test" value="test"/>
     <property name="source.absolute.dir" location="${source.dir}"/>
-    <property name="source.test.absolute.dir" location="${source.test}"/>
+    <property name="source.test.absolute.dir" location="test"/>
     <property name="gen.dir" value="gen"/>
-    <property name="gen.absolute.dir" location="${gen.dir}"/>
+    <property name="gen.absolute.dir" location="gen"/>
     <property name="resource.dir" value="res"/>
     <property name="resource.absolute.dir" location="${resource.dir}"/>
     <property name="asset.dir" value="assets"/>
@@ -106,11 +106,11 @@
 
     <!-- Directory for the third party java libraries -->
     <property name="external.libs.dir" value="libs"/>
-    <property name="external.libs.absolute.dir" location="${external.libs.dir}"/>
+    <property name="external.libs.absolute.dir" location="libs"/>
 
     <!-- Directory for the native libraries -->
     <property name="native.libs.dir" value="libs"/>
-    <property name="native.libs.absolute.dir" location="${native.libs.dir}"/>
+    <property name="native.libs.absolute.dir" location="libs"/>
 
     <!-- Output directories -->
     <property name="out.dir" value="bin"/>
@@ -184,7 +184,7 @@
                 <extra-parameters/>
                 <arg line="${verbose.option}"/>
                 <arg path="${out.classes.absolute.dir}"/>
-                <fileset dir="${external.libs.absolute.dir}" includes="*.jar"/>
+                <fileset dir="libs" includes="*.jar"/>
                 <external-libs/>
             </apply>
         </sequential>
@@ -250,8 +250,8 @@
     <target name="-dirs">
         <echo>Creating output directories if needed...</echo>
         <mkdir dir="${resource.absolute.dir}"/>
-        <mkdir dir="${external.libs.absolute.dir}"/>
-        <mkdir dir="${gen.absolute.dir}"/>
+        <mkdir dir="libs"/>
+        <mkdir dir="gen"/>
         <mkdir dir="${out.absolute.dir}"/>
         <mkdir dir="${out.classes.absolute.dir}"/>
         <mkdir dir="${reports.dir}"/>
@@ -301,7 +301,7 @@
             <src path="${source.absolute.dir}"/>
             <src path="${gen.absolute.dir}"/>
             <classpath>
-                <fileset dir="${external.libs.absolute.dir}" includes="*.jar"/>
+                <fileset dir="libs" includes="*.jar"/>
             </classpath>
         </javac>
     </target>
@@ -402,7 +402,7 @@
 
     <target name="clean" description="Removes output files created by other targets.">
         <delete dir="${out.absolute.dir}" verbose="${verbose}"/>
-        <delete dir="${gen.absolute.dir}" verbose="${verbose}"/>
+        <delete dir="gen" verbose="${verbose}"/>
     </target>
 
     <!-- Targets for code-coverage measurement purposes, invoked from external file -->
@@ -482,7 +482,7 @@
                 <path refid="android.target.classpath"/>
             </bootclasspath>
             <classpath>
-                <fileset dir="${external.libs.absolute.dir}" includes="*.jar"/>
+                <fileset dir="libs" includes="*.jar"/>
             </classpath>
         </javac>
     </target>
@@ -496,7 +496,7 @@
             <classpath>
                 <pathelement location="${out.classes.absolute.dir}"/>
                 <pathelement location="${out.test.classes.absolute.dir}"/>
-                <fileset dir="${external.libs.absolute.dir}" includes="*.jar"/>
+                <fileset dir="libs" includes="*.jar"/>
                 <fileset dir="${emma.dir}" includes="*.jar"/>
                 <path refid="android.target.classpath"/>
             </classpath>
@@ -504,7 +504,7 @@
             <formatter type="xml"/>
 
             <batchtest todir="${reports.dir}">
-                <fileset dir="${source.test.absolute.dir}" includes="**/**Tests.java"/>
+                <fileset dir="test" includes="**/**Tests.java"/>
             </batchtest>
         </junit>
 
