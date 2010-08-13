@@ -171,9 +171,6 @@
                     <sdk>
                         <platform>7</platform>
                     </sdk>
-                    <emulator>
-                        <avd>android-7-avd</avd>
-                    </emulator>
                     <deleteConflictingFiles>true</deleteConflictingFiles>
                     <undeployBeforeDeploy>true</undeployBeforeDeploy>
                 </configuration>
