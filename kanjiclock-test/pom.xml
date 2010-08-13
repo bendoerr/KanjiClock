@@ -13,6 +13,11 @@
 
     <dependencies>
 <dependency>
+            <dependency>
+                <groupId>xmlpull</groupId>
+                <artifactId>xmlpull</artifactId>
+            </dependency>
+
                 <groupId>com.synaptik</groupId>
                 <artifactId>athena</artifactId>
             </dependency>

@@ -12,6 +12,6 @@
     the package of com.example.android.apis.  To run the tests use the command:
     "adb shell am instrument -w com.example.android.apis.tests/android.test.InstrumentationTestRunner"
     -->
-    <instrumentation android:name="com.synaptik.athena.AthenaTestRunner" android:targetPackage="com.fairviewfamilyfarm.kanjiclock" android:label="Tests for Kanji Clock."/>
+    <instrumentation android:name="com.fairviewfamilyfarm.kanjiclock.InstrumentationTestRunner" android:targetPackage="com.fairviewfamilyfarm.kanjiclock" android:label="Tests for Kanji Clock."/>
 
 </manifest>
