@@ -38,7 +38,7 @@ public class InstrumentationTestRunner extends android.test.InstrumentationTestR
     @Override
     public void onStart() {
         try {
-            println new File(getTargetContext().getFilesDir(), JUNIT_XML_FILE).getAbsolutePath();
+            println(new File(getTargetContext().getFilesDir(), JUNIT_XML_FILE).getAbsolutePath());
             startJUnitOutput(new FileWriter(new File(getTargetContext().getFilesDir(), JUNIT_XML_FILE)));
         } catch (IOException e) {
             throw new RuntimeException(e);
