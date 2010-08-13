@@ -4,6 +4,7 @@ import android.test.suitebuilder.TestSuiteBuilder;
 import junit.framework.Test;
 import junit.framework.TestSuite;
 import com.synaptik.athena.AthenaTestCase;
+import java.util.*;
 
 public class AllTests extends AthenaTestCase {
 
