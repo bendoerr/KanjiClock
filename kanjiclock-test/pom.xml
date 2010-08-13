@@ -12,6 +12,10 @@
     <name>Kanji Clock - Instrumentation Test</name>
 
     <dependencies>
+<dependency>
+                <groupId>com.synaptik</groupId>
+                <artifactId>athena</artifactId>
+            </dependency>
         <dependency>
             <groupId>android</groupId>
             <artifactId>android</artifactId>

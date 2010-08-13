@@ -48,6 +48,12 @@
                 <version>4.7</version>
                 <scope>test</scope>
             </dependency>
+	    <dependency>
+                <groupId>com.synaptik</groupId>
+                <artifactId>athena</artifactId>
+                <version>0.2</version>
+                <scope>compile</scope>
+            </dependency>
             <dependency>
                 <groupId>android</groupId>
                 <artifactId>android</artifactId>
