@@ -16,7 +16,7 @@ public class AllTests extends AthenaTestCase {
 
     public List<Class> getTestClasses() {
 	List<Class> classes = new ArrayList();
-        classes.add(KanjiNumberTests.class);
+        classes.add(KanjiClockActivityTests.class);
         return classes;
     }
 }
