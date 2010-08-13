@@ -12,12 +12,12 @@
     <name>Kanji Clock - Instrumentation Test</name>
 
     <dependencies>
-<dependency>
+
             <dependency>
                 <groupId>xmlpull</groupId>
                 <artifactId>xmlpull</artifactId>
             </dependency>
-
+<dependency>
                 <groupId>com.synaptik</groupId>
                 <artifactId>athena</artifactId>
             </dependency>
