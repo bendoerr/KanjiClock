@@ -13,14 +13,14 @@
 
     <dependencies>
 
-            <dependency>
-                <groupId>xmlpull</groupId>
-                <artifactId>xmlpull</artifactId>
-            </dependency>
-<dependency>
-                <groupId>com.synaptik</groupId>
-                <artifactId>athena</artifactId>
-            </dependency>
+        <dependency>
+            <groupId>xmlpull</groupId>
+            <artifactId>xmlpull</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.synaptik</groupId>
+            <artifactId>athena</artifactId>
+        </dependency>
         <dependency>
             <groupId>android</groupId>
             <artifactId>android</artifactId>
@@ -43,7 +43,7 @@
             <version>${project.version}</version>
             <type>jar</type>
         </dependency>
-        
+
     </dependencies>
 
 </project>
