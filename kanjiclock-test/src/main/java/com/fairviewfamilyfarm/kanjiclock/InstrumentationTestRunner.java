@@ -33,6 +33,7 @@ public class InstrumentationTestRunner extends android.test.InstrumentationTestR
     private XmlSerializer mTestSuiteSerializer;
     private long mTestStarted;
     private static final String JUNIT_XML_FILE = "TEST-all.xml";
+    private Integer failures = 0;
     
     
     @Override
@@ -98,8 +99,8 @@ public class InstrumentationTestRunner extends android.test.InstrumentationTestR
         String className = results.getString(REPORT_KEY_NAME_CLASS);
         String testMethod = results.getString(REPORT_KEY_NAME_TEST);
         String stack = results.getString(REPORT_KEY_STACK);
-        int current = results.getInt(REPORT_KEY_NUM_CURRENT);
-        int total = results.getInt(REPORT_KEY_NUM_TOTAL);
+        Integer current = results.getInt(REPORT_KEY_NUM_CURRENT);
+        Integer total = results.getInt(REPORT_KEY_NUM_TOTAL);
         
         mTestSuiteSerializer.startTag(null, "testcase");
         mTestSuiteSerializer.attribute(null, "classname", className);
@@ -118,6 +119,7 @@ public class InstrumentationTestRunner extends android.test.InstrumentationTestR
                 mTestSuiteSerializer.attribute(null, "message", message);
                 mTestSuiteSerializer.attribute(null, "type", reason);
                 mTestSuiteSerializer.text(stack);
+                failures++;
             }
             mTestSuiteSerializer.endTag(null, "failure");
         } else {
@@ -129,6 +131,11 @@ public class InstrumentationTestRunner extends android.test.InstrumentationTestR
             mTestSuiteSerializer.endTag(null, "system-out");
             mTestSuiteSerializer.startTag(null, "system-err");
             mTestSuiteSerializer.endTag(null, "system-err");
+
+            mTestSuiteSerializer.attribute(null, "name", className);
+            mTestSuiteSerializer.attribute(null, "failures", failures.toString());
+            mTestSuiteSerializer.attribute(null, "tests", total.toString());
+            mTestSuiteSerializer.attribute(null, "time", String.format("%.3f", time));
             mTestSuiteSerializer.endTag(null, "testsuite");
             mTestSuiteSerializer.flush();
         }
@@ -142,6 +149,7 @@ public class InstrumentationTestRunner extends android.test.InstrumentationTestR
 
     void endTestSuites() {
         try {
+            mTestSuiteSerializer.attribute(null, "name", "AllTests");
             mTestSuiteSerializer.endTag(null, "testsuites");
             mTestSuiteSerializer.endDocument();
             mTestSuiteSerializer.flush();
