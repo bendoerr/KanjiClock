@@ -54,6 +54,10 @@ public class InstrumentationTestRunner extends android.test.InstrumentationTestR
             mTestSuiteSerializer.startDocument(null, null);
             mTestSuiteSerializer.startTag(null, "testsuites");
             mTestSuiteSerializer.startTag(null, "testsuite");
+            mTestSuiteSerializer.attribute(null, "name", "testsuite");
+            mTestSuiteSerializer.attribute(null, "failures", "0");
+            mTestSuiteSerializer.attribute(null, "tests", "1");
+            mTestSuiteSerializer.attribute(null, "time", String.format("%.3f", 0f));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -131,11 +135,6 @@ public class InstrumentationTestRunner extends android.test.InstrumentationTestR
             mTestSuiteSerializer.endTag(null, "system-out");
             mTestSuiteSerializer.startTag(null, "system-err");
             mTestSuiteSerializer.endTag(null, "system-err");
-
-            mTestSuiteSerializer.attribute(null, "name", className);
-            mTestSuiteSerializer.attribute(null, "failures", failures.toString());
-            mTestSuiteSerializer.attribute(null, "tests", total.toString());
-            mTestSuiteSerializer.attribute(null, "time", String.format("%.3f", time));
             mTestSuiteSerializer.endTag(null, "testsuite");
             mTestSuiteSerializer.flush();
         }
